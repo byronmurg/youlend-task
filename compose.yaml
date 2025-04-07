@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+  __router:
+    image: nginx:latest
+    restart: on-failure
+    ports:
+    - "8080:80"
+    secrets:
+    - source: router_config
+      target: /etc/nginx/nginx.conf
+    networks:
+    - app_net
+
+
+  api:
+    build: ./loans4u-api/
+
+    restart: on-failure
+    environment:
+      PORT: 8000
+      MOUNT_PATH: "/api"
+
+    networks:
+    - app_net
+
+  ui:
+    build: ./loans4u-ui/
+
+    restart: on-failure
+    environment:
+      PORT: 80
+      MOUNT_PATH: "/"
+
+    networks:
+    - app_net
+
+secrets:
+  router_config:
+    file: ./misc/nginx.conf
+
+networks:
+  app_net:
+    driver: bridge

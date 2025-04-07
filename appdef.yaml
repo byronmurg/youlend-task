@@ -1,0 +1,18 @@
+spec_version: 1
+name: "loans4u"
+
+# This is where we define the services *that we create*
+apps:
+  "ui":
+    path: "/"    # This is where the app is mounted in the routing table
+    build: loans4u-ui/    # The path to this app's docker file
+    image: "loans4u-ui"
+    description: "React ui frontend"
+    port: 80
+
+  "api":
+    path: "/api"
+    build: loans4u-api/
+    description: "FastAPI backend"
+    image: "loans4u-api"
+    port: 8000
