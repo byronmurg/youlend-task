@@ -3,7 +3,7 @@ loans4u-api/include
 loans4u-api/lib
 loans4u-api/lib64
 loans4u-api/__pycache__
-loans4u-api/pyenv.cfg
+loans4u-api/pyvenv.cfg
 
 loans4u-ui/node_modules/
 loans4u-ui/build/
