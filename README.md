@@ -16,7 +16,7 @@ helm upgrade --install loans4u loans4u-helm/ --set 'ingress.hosts[0].host=loans4
 
 Make sure that you have the ingress addon enabled `minikube addons enable ingress`.
 
-There are several ways of accessing the applicaion via the ingress controller. The simplest is to get the ip of the nging service via `kubectl get svc -n ngin-ingress -o wide` then add that ip into your `/etc/hosts` file. See (here)[https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/] for more information depending on your local setup.
+There are several ways of accessing the applicaion via the ingress controller. The simplest is to get the ip of the nging service via `kubectl get svc -n ngin-ingress -o wide` then add that ip into your `/etc/hosts` file. See [here](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/) for more information depending on your local setup.
 
 ## Tech stack Overview
 
